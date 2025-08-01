@@ -1,0 +1,372 @@
+/*
+ * Estilos para "Todas las fiestas del mañana" — un sitio web dreamcore
+ *
+ * Este archivo define variables de color, tipografías y componentes
+ * reutilizables para lograr una estética nostálgica tipo VHS.
+ */
+
+/* Reset y valores base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--secondary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Variables CSS para colores, tipografías y texturas */
+:root {
+  --primary: #eecff2;
+  --secondary: #f9e3fe;
+  --accent: #b298dc;
+  --dark: #2c2c2c;
+  --light: #ffffff;
+  --noise: url('images/noise.png');
+  --header-bg: url('images/header.png');
+  --heading-font: 'VT323', monospace;
+  --body-font: 'Roboto', sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+.navbar .brand {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: var(--dark);
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.navbar .nav-links li a:hover {
+  color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--dark);
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--light);
+  background-image: var(--header-bg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--noise);
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: var(--heading-font);
+  font-size: 4rem;
+  margin: 0.5rem 0;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Secciones generales */
+.section {
+  padding: 5rem 1rem;
+  position: relative;
+}
+
+.section:nth-of-type(even) {
+  background: var(--primary);
+}
+
+.section:nth-of-type(odd) {
+  background: var(--secondary);
+}
+
+.section h2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  text-align: center;
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Miembros */
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.member {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.member::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--noise);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.member .avatar {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  background: var(--primary);
+}
+
+/* Canciones */
+.canciones .songs details {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.canciones .songs details summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.canciones .songs details p {
+  margin: 0.5rem 0 0 0;
+}
+
+/* Galería */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendario */
+.calendar-container {
+  overflow: auto;
+  text-align: center;
+}
+
+.calendar-container iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  border: none;
+}
+
+/* Moodboard */
+.moodboard {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.tagembed-container {
+  width: 100%;
+  min-height: 450px;
+}
+
+/* Bitácora */
+.docs-container iframe {
+  border: none;
+}
+
+/* Contacto */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.contact-list a {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+.contact-list a:hover {
+  color: var(--accent);
+}
+
+/* Pie de página */
+.footer {
+  padding: 2rem 1rem;
+  background-color: var(--dark);
+  color: var(--light);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Navegación responsiva */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .navbar .nav-links li {
+    width: 100%;
+  }
+
+  .navbar .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .navbar.active .nav-links {
+    max-height: 500px;
+  }
+
+  .navbar.active .hamburger {
+    background-color: transparent;
+  }
+
+  .navbar.active .hamburger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar.active .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
