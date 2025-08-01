@@ -427,7 +427,7 @@ img {
   60% { clip: rect(20px, 9999px, 30px, 0); transform: translate(4px, 3px); }
 }
 .hero {
-  background-image: url("images/vhs_background.jpg");
+  background-image: url("images/VHS FONDO.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -439,5 +439,6 @@ img {
   align-items: center;
   color: white;
   text-shadow: 0 0 3px #000;
+}
 }
 
