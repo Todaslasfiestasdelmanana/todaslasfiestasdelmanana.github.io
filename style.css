@@ -426,4 +426,18 @@ img {
   35% { clip: rect(16px, 9999px, 26px, 0); transform: translate(1px, -2px); }
   60% { clip: rect(20px, 9999px, 30px, 0); transform: translate(4px, 3px); }
 }
+.hero {
+  background-image: url("images/vhs_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 0 0 3px #000;
+}
 
