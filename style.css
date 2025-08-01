@@ -428,7 +428,7 @@ img {
 }
 .hero {
   background-image: url("images/MIRRORBALL4 VHS.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #000;
