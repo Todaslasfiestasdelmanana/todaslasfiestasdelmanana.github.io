@@ -370,3 +370,57 @@ img {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+.glitch {
+  position: relative;
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: 'VT323', monospace;
+  animation: glitch 1s infinite;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+  mix-blend-mode: lighten;
+}
+
+.glitch::before {
+  color: #f0f;
+  transform: translate(-2px, -2px);
+  animation: glitchTop 1s infinite;
+}
+
+.glitch::after {
+  color: #0ff;
+  transform: translate(2px, 2px);
+  animation: glitchBottom 1s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: none; }
+  20% { transform: skew(0.5deg, 0.5deg); }
+  40% { transform: skew(-0.5deg, -0.5deg); }
+  60% { transform: skew(0.3deg, -0.3deg); }
+  100% { transform: none; }
+}
+
+@keyframes glitchTop {
+  0%, 100% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(0, 9999px, 5px, 0); }
+  20% { clip: rect(0, 9999px, 10px, 0); }
+  30% { clip: rect(5px, 9999px, 10px, 0); }
+}
+
+@keyframes glitchBottom {
+  0%, 100% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(10px, 9999px, 15px, 0); }
+  20% { clip: rect(15px, 9999px, 20px, 0); }
+  30% { clip: rect(20px, 9999px, 25px, 0); }
+}
