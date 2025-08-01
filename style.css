@@ -31,7 +31,7 @@ img {
   --accent: #b298dc;
   --dark: #2c2c2c;
   --light: #ffffff;
-  --noise: url('images/noise.png');
+  --noise: url('images/ruido-de-fondo.jpg');
   --header-bg: url('images/header.png');
   --heading-font: 'VT323', monospace;
   --body-font: 'Roboto', sans-serif;
@@ -432,7 +432,7 @@ img {
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #000;
-  height: 50vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;
