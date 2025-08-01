@@ -428,17 +428,31 @@ img {
 }
 .hero {
   background-image: url("images/VHS.jpg");
-  background-size: cover;
-  background-position: center;
+  background-size: 100% auto; /* ancho completo, altura ajustada */
   background-repeat: no-repeat;
-  position: relative;
+  background-position: top center;
+  background-color: #000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
   color: white;
-  text-shadow: 0 0 3px #000;
 }
+
+.hero-content h1 {
+  font-family: 'VT323', monospace;
+  font-size: 3.5rem;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* opcional para legibilidad */
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  text-shadow: none;
 }
+
+.hero-content p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-shadow: none;
 
